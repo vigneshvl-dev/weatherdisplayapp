@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="app-title">🌤️ Weather App</h1>
+    <p class="subtitle">Enter a city name to get live weather</p>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Search city..."
+        autocomplete="off"
+      />
+      <button id="searchBtn" onclick="getWeather()">Get Weather</button>
+    </div>
+
+    <button id="locationBtn" onclick="getWeatherByLocation()">📍 Use My Location</button>
+
+    <!-- Error Message -->
+    <div class="error-card" id="errorCard">
+      <span id="errorMsg">City not found. Please try again.</span>
+    </div>
+
+    <!-- Weather Result Card -->
+    <div class="weather-card" id="weatherCard">
+      <div class="weather-header">
+        <div>
+          <h2 id="cityName">--</h2>
+          <p id="countryName" class="country"></p>
+        </div>
+        <img id="weatherIcon" src="" alt="weather icon" />
+      </div>
+
+      <div class="temperature-block">
+        <span id="temperature" class="temp-value">--</span>
+        <span class="temp-unit">°C</span>
+      </div>
+
+      <p id="weatherCondition" class="condition">--</p>
+
+      <div class="weather-details">
+        <div class="detail-item">
+          <span class="detail-label">💧 Humidity</span>
+          <span id="humidity" class="detail-value">-- %</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">💨 Wind</span>
+          <span id="windSpeed" class="detail-value">-- km/h</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">🌡️ Feels Like</span>
+          <span id="feelsLike" class="detail-value">-- °C</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loader" id="loader"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
